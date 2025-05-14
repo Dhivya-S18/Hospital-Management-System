@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Appointments - Hospital MS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="appointments.html" class="active">Appointments</a></li>
+                <li><a href="doctors.html">Doctors</a></li>
+                <li><a href="patients.html">Patients</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Manage Appointments</h2>
+
+        <button id="add-appointment-btn" class="action-button">Add New Appointment</button>
+
+        <!-- Area for status messages -->
+        <div id="message-area" class="message"></div>
+
+        <!-- Form for Adding/Editing Appointments (initially hidden) -->
+        <form id="appointment-form" class="form-hidden">
+             <h3>Appointment Details</h3>
+             <input type="hidden" id="appointment-id"> <!-- For storing ID during edits -->
+
+             <div>
+                 <label for="appointment-doctorId">Doctor ID:</label>
+                 <!-- Ideally, replace with a dropdown populated from /api/doctors -->
+                 <input type="number" id="appointment-doctorId" required placeholder="Enter Doctor's ID">
+             </div>
+             <div>
+                 <label for="appointment-patientId">Patient ID:</label>
+                  <!-- Ideally, replace with a dropdown populated from /api/patients -->
+                 <input type="number" id="appointment-patientId" required placeholder="Enter Patient's ID">
+             </div>
+             <div>
+                 <label for="appointment-date">Date:</label>
+                 <input type="date" id="appointment-date" required>
+            </div>
+            <div>
+                 <label for="appointment-time">Time:</label>
+                 <input type="time" id="appointment-time" required>
+            </div>
+            <div>
+                 <label for="appointment-reason">Reason:</label>
+                 <input type="text" id="appointment-reason" placeholder="Reason for visit">
+                 <!-- Or use <textarea id="appointment-reason"></textarea> -->
+            </div>
+
+             <div class="form-actions">
+                 <button type="submit" class="action-button save-button">Save Appointment</button>
+                 <button type="button" id="cancel-edit-btn" class="action-button cancel-button">Cancel</button>
+             </div>
+        </form>
+
+        <!-- Table to display existing appointments -->
+        <h3>Existing Appointments</h3>
+        <div class="table-container">
+            <table id="appointments-table">
+                <thead>
+                    <tr>
+                        <th>Appt ID</th>
+                        <th>Doctor ID</th>
+                        <th>Patient ID</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Reason</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="appointments-table-body">
+                    <!-- Loading indicator -->
+                    <tr>
+                        <td colspan="7">Loading appointments...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Hospital Management System</p>
+    </footer>
+
+    <!-- Load JS files -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/appointments.js"></script>
+     <!-- Optional: <script src="js/main.js"></script> -->
+</body>
+</html>

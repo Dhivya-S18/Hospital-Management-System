@@ -1,0 +1,261 @@
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 300;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.2s ease;
+}
+nav a:hover {
+    opacity: 0.8;
+}
+
+nav a.active {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1000px; /* Wider container */
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+h2, h3 {
+    color: #0056b3; /* Darker blue */
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+h3 {
+    margin-top: 2rem;
+}
+
+/* Buttons */
+.action-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem; /* Slightly smaller */
+    margin-right: 8px;
+    margin-bottom: 1rem;
+    color: white;
+    transition: background-color 0.2s ease;
+    vertical-align: middle; /* Align buttons nicely */
+}
+
+#add-patient-btn {
+    background-color: #28a745; /* Green */
+}
+#add-patient-btn:hover {
+    background-color: #218838;
+}
+
+.edit-button {
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+     margin-right: 5px;
+     padding: 6px 10px; /* Smaller buttons in table */
+     font-size: 0.85rem;
+}
+.edit-button:hover {
+    background-color: #e0a800;
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red */
+    padding: 6px 10px; /* Smaller buttons in table */
+    font-size: 0.85rem;
+}
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.save-button {
+     background-color: #007bff; /* Blue */
+}
+.save-button:hover {
+     background-color: #0056b3;
+}
+
+.cancel-button {
+     background-color: #6c757d; /* Gray */
+}
+.cancel-button:hover {
+     background-color: #5a6268;
+}
+
+
+/* Form Styling */
+#patient-form {
+    background-color: #fdfdfd;
+    padding: 1.5rem 2rem;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.form-hidden {
+    display: none;
+}
+
+#patient-form h3 {
+    margin-top: 0;
+    border: none;
+    font-size: 1.2rem;
+    color: #495057;
+}
+
+#patient-form div {
+    margin-bottom: 1rem;
+}
+
+#patient-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500; /* Slightly bolder labels */
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+#patient-form input[type="text"],
+#patient-form input[type="email"],
+#patient-form input[type="password"],
+#patient-form input[type="tel"] {
+    width: calc(100% - 22px); /* Adjust for padding/border */
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+#patient-form input:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+#patient-form small {
+    font-size: 0.8rem;
+    color: #6c757d;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.form-actions {
+    margin-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    padding-top: 1.5rem;
+    text-align: right; /* Align buttons right */
+}
+
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto; /* Handle responsiveness */
+}
+
+#patients-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem; /* Slightly smaller table text */
+}
+
+#patients-table th,
+#patients-table td {
+    border: 1px solid #dee2e6;
+    padding: 12px 15px; /* More padding */
+    text-align: left;
+    vertical-align: middle; /* Align content vertically */
+}
+
+#patients-table th {
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: 500; /* Medium weight header */
+}
+
+#patients-table tbody tr:nth-child(even) { /* Switched to even for style */
+    background-color: #f8f9fa;
+}
+
+#patients-table tbody tr:hover {
+    background-color: #e9ecef; /* Highlight on hover */
+}
+
+.table-actions {
+    white-space: nowrap; /* Prevent buttons from wrapping */
+}
+
+/* Message Area Styling */
+.message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    display: none; /* Hidden by default */
+    border: 1px solid transparent;
+    font-weight: 500;
+}
+
+.message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    display: block;
+}
+
+.message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    display: block;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+}

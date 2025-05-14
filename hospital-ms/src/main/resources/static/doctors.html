@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Doctors - Hospital MS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="doctors.html" class="active">Doctors</a></li>
+                <li><a href="patients.html">Patients</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Manage Doctors</h2>
+
+        <button id="add-doctor-btn" class="action-button">Add New Doctor</button>
+
+        <!-- Area for status messages -->
+        <div id="message-area" class="message"></div>
+
+        <!-- Form for Adding/Editing Doctors (initially hidden) -->
+        <form id="doctor-form" class="form-hidden">
+             <h3>Doctor Details</h3>
+             <input type="hidden" id="doctor-id"> <!-- For storing ID during edits -->
+
+             <div>
+                 <label for="doctor-name">Name:</label>
+                 <input type="text" id="doctor-name" required placeholder="Full Name">
+             </div>
+             <div>
+                 <label for="doctor-specialization">Specialization:</label>
+                 <input type="text" id="doctor-specialization" required placeholder="e.g., Cardiology">
+             </div>
+              <div>
+                 <label for="doctor-department">Department:</label>
+                 <input type="text" id="doctor-department" required placeholder="e.g., Medical">
+             </div>
+             <div>
+                 <label for="doctor-contactNumber">Contact Number:</label>
+                 <input type="tel" id="doctor-contactNumber" placeholder="e.g., 555-9876">
+             </div>
+             <div>
+                 <label for="doctor-email">Email:</label>
+                 <input type="email" id="doctor-email" required placeholder="doctor@example.com">
+            </div>
+            <div>
+                 <label for="doctor-password">Password:</label>
+                 <input type="password" id="doctor-password" placeholder="Enter only to set/change">
+                 <small>Leave blank if not changing password during edit.</small>
+            </div>
+
+             <div class="form-actions">
+                 <button type="submit" class="action-button save-button">Save Doctor</button>
+                 <button type="button" id="cancel-edit-btn" class="action-button cancel-button">Cancel</button>
+             </div>
+        </form>
+
+        <!-- Table to display existing doctors -->
+        <h3>Existing Doctors</h3>
+        <div class="table-container">
+            <table id="doctors-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Specialization</th>
+                        <th>Department</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="doctors-table-body">
+                    <!-- Loading indicator -->
+                    <tr>
+                        <td colspan="7">Loading doctors...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Hospital Management System</p>
+    </footer>
+
+    <!-- Load JS files -->
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/doctors.js"></script>
+	<script src="js/main.js"></script>
+	</body>
+</html>
